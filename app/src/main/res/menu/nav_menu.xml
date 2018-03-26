@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Algemeen">
+
+
+        <item
+            android:id="@+id/nav_menu_agenda"
+            android:title="@string/side_menu_agenda"
+            android:icon="@drawable/ic_agenda"/>
+
+        <item
+            android:id="@+id/nav_menu_remote_control"
+            android:title="@string/side_menu_remote_control"
+            android:icon="@drawable/ic_remote"/>
+
+        <item
+            android:id="@+id/nav_menu_report_problem"
+            android:title="@string/side_menu_report_problem"
+            android:icon="@drawable/ic_report_problem"/>
+
+
+        <item
+            android:id="@+id/nav_menu_logout"
+            android:title="@string/side_menu_logout"
+            android:icon="@drawable/ic_exit"/>
+
+
+    </item>
+</menu>

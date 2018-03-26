@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Booking App</string>
+
+    <string name="side_menu_agenda">Agenda</string>
+    <string name="side_menu_report_problem">Melding maken</string>
+    <string name="side_menu_logout">Uitloggen</string>
+    <string name="side_menu_remote_control">Afstandsbediening</string>
+
+    <string name="login_button">Login</string>
+    <string name="register_button">Registreren</string>
+    <string name="welcome_login_button">Inloggen</string>
+    <string name="welcome_register_button">Registreren</string>
+    <string name="welcome_guest_button">Gast</string>
+    <string name="connect_again_button">Nieuwe verbinding maken</string>\
+    <string name="scan_qr_code_button">Start de scanner</string>
+
+    <string name="username_hint">xxxxxxx@hr.nl</string>
+    <string name="password_hint">Wachtwoord</string>
+    <string name="confirm_password_hint">Wachtwoord bevestigen</string>
+
+    <string name="login_title">Inloggen</string>
+    <string name="register_title">Registreer</string>
+    <string name="remote_control_title">Afstandsbediening</string>
+
+    <string name="welcome_text">Welkom in de Booking App van de Hogeschool Rotterdam. Je kunt er voor kiezen om te registreren met je school e-mail of om als gast verder te gaan.</string>
+
+    <string name="connection_text">Verbonden met lokaal: %s</string>
+    <string name="remote_control_explanation">Gebruik de scanner om de QR code om verbinding te maken met het bijbehorende lokaal.</string>
+</resources>
