@@ -13,14 +13,18 @@
     <string name="welcome_guest_button">Gast</string>
     <string name="connect_again_button">Nieuwe verbinding maken</string>\
     <string name="scan_qr_code_button">Start de scanner</string>
+    <string name="report_problem_submit_button">Verstuur</string>
 
     <string name="username_hint">xxxxxxx@hr.nl</string>
     <string name="password_hint">Wachtwoord</string>
     <string name="confirm_password_hint">Wachtwoord bevestigen</string>
+    <string name="report_problem_subject_hint">Onderwerp</string>
+    <string name="report_problem_message_hint">Melding</string>
 
     <string name="login_title">Inloggen</string>
     <string name="register_title">Registreer</string>
     <string name="remote_control_title">Afstandsbediening</string>
+    <string name="report_problem_title">Melding maken</string>
 
     <string name="welcome_text">Welkom in de Booking App van de Hogeschool Rotterdam. Je kunt er voor kiezen om te registreren met je school e-mail of om als gast verder te gaan.</string>
 

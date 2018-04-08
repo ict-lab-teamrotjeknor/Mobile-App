@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:onClick="hideKeyboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/header"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/problem_subject"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/report_problem_subject_hint"
+                android:background="@drawable/boxed_background"
+                android:inputType="textEmailSubject|textCapSentences"
+                android:padding="16dp"
+                android:textSize="14dp"/>
+
+            <EditText
+                android:id="@+id/problem_message"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:hint="@string/report_problem_message_hint"
+                android:background="@drawable/boxed_background"
+                android:gravity="top"
+                android:maxLines="20"
+                android:padding="16dp"
+                android:inputType="textCapSentences"
+
+                android:textSize="14dp"/>
+
+            <Button
+                android:id="@+id/send_problem_button"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:text="@string/report_problem_submit_button"
+                android:background="@drawable/boxed_button_selector"
+                android:enabled="false"
+                android:textColor="@drawable/button_text_selector"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

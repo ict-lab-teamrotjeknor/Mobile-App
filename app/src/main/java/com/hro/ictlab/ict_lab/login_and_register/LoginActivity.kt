@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import butterknife.ButterKnife
+import butterknife.OnTextChanged
 import com.hro.ictlab.ict_lab.R
 import com.hro.ictlab.ict_lab.base.BaseActivity
 import com.hro.ictlab.ict_lab.home.HomeActivity
@@ -14,20 +16,15 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        ButterKnife.bind(this)
+
         setActionBar(R.string.login_title, true)
 
         login_button.setOnClickListener { startActivity(Intent(this, HomeActivity::class.java)) }
+    }
 
-        password.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(p0: Editable?) {
-            }
-
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                login_button.isEnabled = username.text.isNotEmpty() && password.text.isNotEmpty()
-            }
-        })
+    @OnTextChanged(R.id.password, R.id.username)
+    fun checkRequiredFields() {
+        login_button.isEnabled = username.text.isNotEmpty() && password.text.isNotEmpty()
     }
 }
