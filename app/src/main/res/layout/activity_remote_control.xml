@@ -11,109 +11,173 @@
         android:layout_height="match_parent" />
 
     <RelativeLayout
+        android:id="@+id/remote_control_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/remote_control_view"
         android:background="@color/white"
         android:visibility="gone">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/connected_with"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="24dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="@string/connection_text"
-        android:textColor="@color/black"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/connected_with"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="24dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/connection_text"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/control_reset"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_centerInParent="true"
-        android:layout_margin="32dp"
-        android:clickable="true"
-        android:src="@drawable/control_reset" />
+        <ImageView
+            android:id="@+id/control_reset"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerInParent="true"
+            android:clickable="true"
+            android:src="@drawable/control_reset" />
 
-    <ImageView
-        android:id="@+id/control_right"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/control_reset"
-        android:clickable="true"
-        android:src="@drawable/control_right" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/control_reset"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
 
-    <ImageView
-        android:id="@+id/control_down"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_below="@+id/control_reset"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:src="@drawable/control_down" />
+            <TextView
+                android:id="@+id/right_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-regular"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
 
-    <ImageView
-        android:id="@+id/control_left"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_centerVertical="true"
-        android:layout_toLeftOf="@+id/control_reset"
-        android:clickable="true"
-        android:src="@drawable/control_left" />
+            <ImageView
+                android:id="@+id/control_right"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:clickable="true"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_arrow_right" />
+        </LinearLayout>
 
-    <ImageView
-        android:id="@+id/control_up"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_above="@+id/control_reset"
-        android:layout_centerHorizontal="true"
-        android:clickable="true"
-        android:src="@drawable/control_up" />
 
-    <Button
-        android:id="@+id/connect_again_button"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/button_height"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="24dp"
-        android:background="@drawable/boxed_button"
-        android:clickable="true"
-        android:fontFamily="sans-serif-regular"
-        android:text="@string/connect_again_button"
-        android:textColor="@color/black"
-        android:textSize="14dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/control_reset"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/left_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-regular"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/control_left"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:clickable="true"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_arrow_left" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_above="@+id/control_reset"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/up_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-regular"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/control_up"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:clickable="true"
+                android:layout_marginBottom="32dp"
+                android:src="@drawable/ic_arrow_up" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/control_reset"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/control_down"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:clickable="true"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/ic_arrow_down" />
+
+            <TextView
+                android:id="@+id/down_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-regular"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/connect_again_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="24dp"
+            android:background="@drawable/boxed_button"
+            android:clickable="true"
+            android:fontFamily="sans-serif-regular"
+            android:text="@string/connect_again_button"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/scanner_explanation_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
-        android:id="@+id/scanner_explanation_layout">
+        android:background="@color/white">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_margin="24dp"
-            android:textSize="14sp"
             android:fontFamily="sans-serif-regular"
+            android:text="@string/remote_control_explanation"
             android:textColor="@color/black"
-            android:text="@string/remote_control_explanation"/>
+            android:textSize="14sp" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                android:id="@+id/start_scan_button"
-                android:fontFamily="sans-serif-regular"
-                android:layout_alignParentBottom="true"
-                android:textSize="14dp"
-                android:textColor="@color/black"
-                android:layout_margin="24dp"
-                android:background="@drawable/boxed_button"
-                android:text="@string/scan_qr_code_button"/>
+        <Button
+            android:id="@+id/start_scan_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="24dp"
+            android:background="@drawable/boxed_button"
+            android:fontFamily="sans-serif-regular"
+            android:text="@string/scan_qr_code_button"
+            android:textColor="@color/black"
+            android:textSize="14dp" />
 
     </RelativeLayout>
 
