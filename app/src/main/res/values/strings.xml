@@ -22,6 +22,7 @@
     <string name="report_problem_message_hint">Melding</string>
 
     <string name="login_title">Inloggen</string>
+    <string name="home_title">Home</string>
     <string name="register_title">Registreer</string>
     <string name="remote_control_title">Afstandsbediening</string>
     <string name="report_problem_title">Melding maken</string>

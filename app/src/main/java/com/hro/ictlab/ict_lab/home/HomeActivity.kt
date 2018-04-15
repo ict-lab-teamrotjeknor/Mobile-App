@@ -9,6 +9,8 @@ import com.hro.ictlab.ict_lab.R
 import com.hro.ictlab.ict_lab.base.BaseActivity
 import com.hro.ictlab.ict_lab.handlers.NavigationDrawerHandler
 import kotlinx.android.synthetic.main.activity_home.*
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
 
 
 class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -21,15 +23,13 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-        supportActionBar!!.setTitle("Home")
+        setActionBar(R.string.home_title, true)
 
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, R.string.app_name, R.string.app_name)
         actionBarDrawerToggle.isDrawerIndicatorEnabled = true
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         navigation_view.setNavigationItemSelectedListener(this)
         actionBarDrawerToggle.syncState()
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
