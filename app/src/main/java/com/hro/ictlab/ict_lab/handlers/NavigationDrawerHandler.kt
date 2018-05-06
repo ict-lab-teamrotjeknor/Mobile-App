@@ -14,7 +14,10 @@ class NavigationDrawerHandler {
     fun handleNavigationItem(item: MenuItem, activity: BaseActivity) {
 
         when (item.itemId) {
-            nav_menu_logout -> activity.startActivity(Intent(activity, WelcomeActivity::class.java))
+            nav_menu_logout -> {
+                activity.setAccessToken(null)
+                activity.startActivity(Intent(activity, WelcomeActivity::class.java))
+            }
             nav_menu_remote_control -> activity.startActivity(Intent(activity, RemoteControlActivity::class.java))
             nav_menu_report_problem -> activity.startActivity(Intent(activity, ReportProblemActivity::class.java))
         }

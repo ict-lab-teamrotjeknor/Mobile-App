@@ -49,29 +49,6 @@
                 android:textSize="14sp"/>
 
         </android.support.design.widget.TextInputLayout>
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/confirm_password_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            app:hintEnabled="false"
-            app:passwordToggleDrawable="@drawable/display_password_selector">
-
-            <EditText
-                android:id="@+id/confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/edittext_height"
-                android:labelFor="@id/confirm_password"
-                android:background="@drawable/boxed_background"
-                android:fontFamily="sans-serif"
-                android:inputType="textPassword"
-                android:padding="16dp"
-                android:textColorHint="@color/hint_color"
-                android:hint="@string/confirm_password_hint"
-                android:textSize="14sp"/>
-
-        </android.support.design.widget.TextInputLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -86,6 +63,7 @@
             android:layout_height="@dimen/button_height"
             android:textSize="14dp"
             android:id="@+id/register_button"
+            android:enabled="false"
             android:textColor="@drawable/button_text_selector"
             android:background="@drawable/boxed_button_selector"
             android:text="@string/register_button"/>
