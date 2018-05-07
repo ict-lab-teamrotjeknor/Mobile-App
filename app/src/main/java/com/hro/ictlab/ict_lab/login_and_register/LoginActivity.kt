@@ -13,6 +13,7 @@ import com.hro.ictlab.ict_lab.base.BaseActivity
 import com.hro.ictlab.ict_lab.home.HomeActivity
 import com.hro.ictlab.ict_lab.retrofit.AuthenticationForm
 import kotlinx.android.synthetic.main.activity_login.*
+import okhttp3.Response
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
 
@@ -44,17 +45,10 @@ class LoginActivity : BaseActivity() {
                         setAccessToken("kanflkasjflksaj32u823f983h932")
                         startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                     } else {
-                        AlertDialog.Builder(this@LoginActivity)
-                                .setTitle("Oeps")
-                                .setMessage("Incorrect gebruikersnaam of wachtwoord.")
-                                .setPositiveButton("OK") { dialog, id ->
-                                    dialog.dismiss()
-                                }
-                                .create()
-                                .show()
+                        showDefaultAlert("Oeps", "Incorrect gebruikersnaam of wachtwoord.")
                     }
                 }, {
-                    println(it.message)
+                    showDefaultAlert("Oeps", "Er is iets fout gegaan tijdens verbinden naar de server.")
                 })
     }
 }

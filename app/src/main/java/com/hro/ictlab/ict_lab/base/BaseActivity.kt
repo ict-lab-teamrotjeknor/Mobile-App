@@ -1,5 +1,6 @@
 package com.hro.ictlab.ict_lab.base
 
+import android.app.AlertDialog
 import android.content.Context
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -25,6 +26,17 @@ open class BaseActivity : AppCompatActivity() {
     protected fun hideKeyboard(v: View) {
         val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         inputMethodManager.hideSoftInputFromWindow(v.windowToken, 0)
+    }
+
+    protected fun showDefaultAlert(title: String, message: String) {
+        AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK") { dialog, id ->
+                    dialog.dismiss()
+                }
+                .create()
+                .show()
     }
 
     fun setAccessToken(accessToken: String?) {

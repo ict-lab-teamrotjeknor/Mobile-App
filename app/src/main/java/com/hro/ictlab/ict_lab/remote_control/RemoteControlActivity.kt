@@ -93,6 +93,7 @@ class RemoteControlActivity : BaseActivity(), BarcodeCaptureView.OnResultHandler
                 up_text.text = "Week overzicht"
                 down_text.text = ""
                 control_down.visibility = View.GONE
+                control_up.visibility = View.VISIBLE
             }
             Level.WEEK -> {
                 left_text.text = "Vorige week"

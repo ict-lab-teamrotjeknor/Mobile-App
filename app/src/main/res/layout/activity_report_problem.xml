@@ -18,6 +18,22 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <RelativeLayout
+                android:id="@+id/subject_spinner_container"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edittext_height"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/boxed_background">
+
+                <Spinner
+                    android:id="@+id/subjectSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="16dp"
+                    android:paddingLeft="6dp" />
+
+            </RelativeLayout>
+
             <EditText
                 android:id="@+id/problem_subject"
                 android:layout_width="match_parent"
