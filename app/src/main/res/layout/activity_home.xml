@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <android.support.v4.widget.DrawerLayout
@@ -10,11 +10,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.github.sundeepk.compactcalendarview.CompactCalendarView
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:id="@+id/compactcalendar_view"
+                app:compactCalendarBackgroundColor="@color/colorPrimary"
+                app:compactCalendarCurrentDayBackgroundColor="@color/colorPrimary"
+                app:compactCalendarCurrentSelectedDayBackgroundColor="@color/colorAccent"
+                app:compactCalendarTargetHeight="250dp"
+                app:compactCalendarTextColor="@color/white"
+                app:compactCalendarTextSize="12sp" />
+
+        </LinearLayout>
+
         <android.support.design.widget.NavigationView
             android:id="@+id/navigation_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:menu="@menu/nav_menu"/>
+            app:menu="@menu/nav_menu" />
     </android.support.v4.widget.DrawerLayout>
 </LinearLayout>

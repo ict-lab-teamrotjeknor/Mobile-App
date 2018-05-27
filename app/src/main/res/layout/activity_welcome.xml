@@ -42,16 +42,6 @@
             android:background="@drawable/boxed_button"
             android:text="@string/welcome_register_button"/>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height"
-            android:id="@+id/guest_button"
-            android:fontFamily="sans-serif-regular"
-            android:textSize="14dp"
-            android:textColor="@color/black"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/boxed_button"
-            android:text="@string/welcome_guest_button"/>
     </LinearLayout>
 
 </RelativeLayout>

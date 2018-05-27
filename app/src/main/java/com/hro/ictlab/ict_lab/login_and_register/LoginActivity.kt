@@ -24,7 +24,7 @@ class LoginActivity : BaseActivity() {
         setContentView(R.layout.activity_login)
         ButterKnife.bind(this)
 
-        setActionBar(R.string.login_title, true)
+        setActionBar(getString(R.string.login_title), true)
 
         login_button.setOnClickListener {
             authenticateUser()

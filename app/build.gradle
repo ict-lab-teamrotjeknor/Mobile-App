@@ -28,6 +28,8 @@ dependencies {
     implementation 'com.android.support:design:27.1.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'nl.boydroid:simple-barcode-scanner:0.2.6'
+    implementation "nl.boydroid:grant-me:0.3.5"
+    implementation 'com.github.sundeepk:compact-calendar-view:2.0.2.3'
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'

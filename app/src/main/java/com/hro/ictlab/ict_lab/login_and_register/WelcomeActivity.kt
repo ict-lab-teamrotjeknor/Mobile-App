@@ -16,7 +16,6 @@ class WelcomeActivity : BaseActivity() {
 
         login_button.setOnClickListener { startActivity(Intent(this, LoginActivity::class.java)) }
         register_button.setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
-        guest_button.setOnClickListener { startActivity(Intent(this, HomeActivity::class.java)) }
 
         if(sharedPrefs(this).getString(ACCESS_TOKEN, null) != null) {
             startActivity(Intent(this, HomeActivity::class.java))

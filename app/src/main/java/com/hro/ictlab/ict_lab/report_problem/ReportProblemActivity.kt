@@ -14,7 +14,7 @@ class ReportProblemActivity : BaseActivity() {
         setContentView(R.layout.activity_report_problem)
         ButterKnife.bind(this)
 
-        setActionBar(R.string.report_problem_title, true)
+        setActionBar(getString(R.string.report_problem_title), true)
 
         send_problem_button.setOnClickListener { finish() }
     }

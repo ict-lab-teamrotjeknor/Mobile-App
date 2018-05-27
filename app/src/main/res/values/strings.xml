@@ -22,7 +22,6 @@
     <string name="report_problem_message_hint">Melding</string>
 
     <string name="login_title">Inloggen</string>
-    <string name="home_title">Home</string>
     <string name="register_title">Registreer</string>
     <string name="remote_control_title">Afstandsbediening</string>
     <string name="report_problem_title">Melding maken</string>
@@ -31,4 +30,16 @@
 
     <string name="connection_text">Verbonden met lokaal: %s</string>
     <string name="remote_control_explanation">Gebruik de scanner om de QR code om verbinding te maken met het bijbehorende lokaal.</string>
+    <string name="previous_day">Vorige dag</string>
+    <string name="next_day">Volgende dag</string>
+    <string name="week_overview">Week overzicht</string>
+    <string name="last_week">Vorige week</string>
+    <string name="next_week">Volgende week</string>
+    <string name="month_overview">Maand overzicht</string>
+    <string name="day_overview">Dag overzicht</string>
+    <string name="last_month">Vorige maand</string>
+    <string name="next_month">Volgende maand</string>
+    <string name="year_overview">Jaar overzicht</string>
+    <string name="last_year">Vorig jaar</string>
+    <string name="next_year">Volgend jaar</string>
 </resources>

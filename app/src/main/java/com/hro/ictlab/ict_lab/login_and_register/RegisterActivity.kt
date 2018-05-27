@@ -17,7 +17,7 @@ class RegisterActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        setActionBar(R.string.register_title, true)
+        setActionBar(getString(R.string.register_title), true)
         ButterKnife.bind(this)
 
         register_button.setOnClickListener { registerUser() }

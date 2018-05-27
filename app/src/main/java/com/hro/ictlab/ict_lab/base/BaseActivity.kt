@@ -17,10 +17,10 @@ open class BaseActivity : AppCompatActivity() {
         val ACCESS_TOKEN = "access_token"
     }
 
-    protected fun setActionBar(title: Int, showBackArrow: Boolean) {
+    protected fun setActionBar(title: String, showBackArrow: Boolean) {
         val supportActionBar = supportActionBar ?: return
         supportActionBar.setDisplayHomeAsUpEnabled(showBackArrow)
-        supportActionBar.title = getString(title)
+        supportActionBar.title = title
     }
 
     protected fun hideKeyboard(v: View) {
