@@ -42,7 +42,7 @@ class LoginActivity : BaseActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     if (it.succeed) {
-                        setAccessToken("kanflkasjflksaj32u823f983h932")
+                        setAccessToken(it.token)
                         startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                     } else {
                         showDefaultAlert("Oeps", "Incorrect gebruikersnaam of wachtwoord.")

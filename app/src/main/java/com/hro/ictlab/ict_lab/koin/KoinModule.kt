@@ -34,6 +34,16 @@ private fun okHttpClient(application: Application): OkHttpClient {
     val cache = Cache(application.cacheDir, 10 * 1024 * 1024)
     val builder = OkHttpClient.Builder().cache(cache)
 
+    builder.cookieJar(object : CookieJar{
+        override fun saveFromResponse(url: HttpUrl?, cookies: MutableList<Cookie>?) {
+            println(cookies)
+        }
+
+        override fun loadForRequest(url: HttpUrl?): MutableList<Cookie> {
+            return mutableListOf()
+        }
+    })
+
     return builder.build()
 }
 

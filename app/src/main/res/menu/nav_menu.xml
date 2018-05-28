@@ -3,12 +3,6 @@
 
     <item android:title="Algemeen">
 
-
-        <item
-            android:id="@+id/nav_menu_agenda"
-            android:title="@string/side_menu_agenda"
-            android:icon="@drawable/ic_agenda"/>
-
         <item
             android:id="@+id/nav_menu_remote_control"
             android:title="@string/side_menu_remote_control"

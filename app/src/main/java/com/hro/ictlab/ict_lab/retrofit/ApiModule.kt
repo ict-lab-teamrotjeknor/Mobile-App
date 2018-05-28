@@ -14,5 +14,5 @@ interface ApiModule {
     fun register(@Body form: AuthenticationForm): Observable<BaseResponse>
 
     @POST("authentication/signin")
-    fun signIn(@Body form: AuthenticationForm): Observable<BaseResponse>
+    fun signIn(@Body form: AuthenticationForm): Observable<AuthenticationResponse>
 }

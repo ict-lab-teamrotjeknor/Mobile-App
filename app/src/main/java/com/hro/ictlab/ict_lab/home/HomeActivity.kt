@@ -6,7 +6,6 @@ import android.support.v4.content.ContextCompat
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.view.MenuItem
-import android.widget.Toast
 import com.github.sundeepk.compactcalendarview.CompactCalendarView
 import com.github.sundeepk.compactcalendarview.domain.Event
 import com.hro.ictlab.ict_lab.R
@@ -44,7 +43,7 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         compactcalendar_view.setListener(object : CompactCalendarView.CompactCalendarViewListener {
             override fun onDayClick(dateClicked: Date) {
-                Toast.makeText(this@HomeActivity, compactcalendar_view.getEvents(dateClicked).get(0).data.toString(), Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@HomeActivity, compactcalendar_view.getEvents(dateClicked).get(0).data.toString(), Toast.LENGTH_SHORT).show()
             }
 
             override fun onMonthScroll(firstDayOfNewMonth: Date?) {
