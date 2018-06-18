@@ -17,7 +17,7 @@ class WelcomeActivity : BaseActivity() {
         login_button.setOnClickListener { startActivity(Intent(this, LoginActivity::class.java)) }
         register_button.setOnClickListener { startActivity(Intent(this, RegisterActivity::class.java)) }
 
-        if(sharedPrefs(this).getString(ACCESS_TOKEN, null) != null) {
+        if(sharedPrefs(application).getString(SESSION_COOKIE, "").isNotEmpty()) {
             startActivity(Intent(this, HomeActivity::class.java))
         }
     }

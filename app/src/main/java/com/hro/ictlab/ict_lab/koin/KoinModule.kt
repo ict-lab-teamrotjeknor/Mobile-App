@@ -3,12 +3,18 @@ package com.hro.ictlab.ict_lab.koin
 import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
+import android.webkit.CookieManager
+import com.hro.ictlab.ict_lab.base.BaseActivity.Companion.SESSION_COOKIE
 import com.hro.ictlab.ict_lab.retrofit.ApiModule
 import okhttp3.*
 import org.koin.dsl.module.Module
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import okhttp3.OkHttpClient
+import okhttp3.Cookie
+
+
 
 val koinModule: Module = org.koin.dsl.module.applicationContext {
     bean { api(get()) }
@@ -24,6 +30,7 @@ private fun api(retrofit: Retrofit): ApiModule {
 private fun retrofit(okHttpClient: OkHttpClient, baseUrl: String): Retrofit {
     return Retrofit.Builder()
             .baseUrl(baseUrl)
+            .client(okHttpClient)
             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -31,20 +38,21 @@ private fun retrofit(okHttpClient: OkHttpClient, baseUrl: String): Retrofit {
 
 private fun okHttpClient(application: Application): OkHttpClient {
 
-    val cache = Cache(application.cacheDir, 10 * 1024 * 1024)
-    val builder = OkHttpClient.Builder().cache(cache)
+    val interceptor = Interceptor { chain ->
+        val response = chain.proceed(chain.request())
+        var request = chain.request()
 
-    builder.cookieJar(object : CookieJar{
-        override fun saveFromResponse(url: HttpUrl?, cookies: MutableList<Cookie>?) {
-            println(cookies)
+        val builder = request.newBuilder().addHeader("Set-Cookie", sharedPrefs(application).getString(SESSION_COOKIE, ""))
+
+        if (response.headers("Set-Cookie").isNotEmpty()) {
+            sharedPrefs(application).edit().putString(SESSION_COOKIE, response.header("Set-Cookie").substringAfter("=").substringBefore(";")).apply()
         }
 
-        override fun loadForRequest(url: HttpUrl?): MutableList<Cookie> {
-            return mutableListOf()
-        }
-    })
+        request = builder.build()
+        chain.proceed(request)
+    }
 
-    return builder.build()
+    return OkHttpClient.Builder().addInterceptor(interceptor).build()
 }
 
 fun sharedPrefs(context: Context): SharedPreferences {

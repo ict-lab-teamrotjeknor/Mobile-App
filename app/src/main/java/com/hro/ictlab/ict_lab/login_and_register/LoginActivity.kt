@@ -11,6 +11,7 @@ import butterknife.OnTextChanged
 import com.hro.ictlab.ict_lab.R
 import com.hro.ictlab.ict_lab.base.BaseActivity
 import com.hro.ictlab.ict_lab.home.HomeActivity
+import com.hro.ictlab.ict_lab.koin.sharedPrefs
 import com.hro.ictlab.ict_lab.retrofit.AuthenticationForm
 import kotlinx.android.synthetic.main.activity_login.*
 import okhttp3.Response
@@ -42,7 +43,6 @@ class LoginActivity : BaseActivity() {
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
                     if (it.succeed) {
-                        setAccessToken(it.token)
                         startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                     } else {
                         showDefaultAlert("Oeps", "Incorrect gebruikersnaam of wachtwoord.")

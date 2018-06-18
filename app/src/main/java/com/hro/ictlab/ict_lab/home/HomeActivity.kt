@@ -1,5 +1,6 @@
 package com.hro.ictlab.ict_lab.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.content.ContextCompat
@@ -11,7 +12,12 @@ import com.github.sundeepk.compactcalendarview.domain.Event
 import com.hro.ictlab.ict_lab.R
 import com.hro.ictlab.ict_lab.base.BaseActivity
 import com.hro.ictlab.ict_lab.handlers.NavigationDrawerHandler
+import com.hro.ictlab.ict_lab.koin.sharedPrefs
+import com.hro.ictlab.ict_lab.retrofit.AuthenticationForm
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_login.*
+import rx.android.schedulers.AndroidSchedulers
+import rx.schedulers.Schedulers
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -23,23 +29,19 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     private val dateFormat = SimpleDateFormat("MMMM yyyy", Locale.getDefault())
     private val eventFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
 
-    private val dummyEventList : MutableList<Date> = mutableListOf(eventFormat.parse("2018-05-16"), eventFormat.parse("2018-05-11"), eventFormat.parse("2018-05-19"))
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         setActionBar(dateFormat.format(Date()), true)
 
+        getUserReservations()
+
         actionBarDrawerToggle = ActionBarDrawerToggle(this, drawer_layout, R.string.app_name, R.string.app_name)
         actionBarDrawerToggle.isDrawerIndicatorEnabled = true
         drawer_layout.addDrawerListener(actionBarDrawerToggle)
         navigation_view.setNavigationItemSelectedListener(this)
         actionBarDrawerToggle.syncState()
-
-        dummyEventList.forEach {
-            compactcalendar_view.addEvent(Event(ContextCompat.getColor(this, R.color.colorAccent), it.time, "Mooi event"))
-        }
 
         compactcalendar_view.setListener(object : CompactCalendarView.CompactCalendarViewListener {
             override fun onDayClick(dateClicked: Date) {
@@ -51,7 +53,6 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             }
         })
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         navigationDrawerHandler.handleNavigationItem(item, this)
@@ -67,4 +68,16 @@ class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     override fun onBackPressed() {}
+
+    private fun getUserReservations() {
+        api.getUserReservations()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    println(it.succeed)
+                    compactcalendar_view.addEvent(Event(ContextCompat.getColor(this, R.color.colorAccent), 5894579843753544, "Mooi event"))
+                }, {
+                    showDefaultAlert("Oeps", "Er is iets fout gegaan tijdens verbinden naar de server.")
+                })
+    }
 }

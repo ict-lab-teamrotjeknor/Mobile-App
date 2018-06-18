@@ -14,7 +14,7 @@ open class BaseActivity : AppCompatActivity() {
     val api by inject<ApiModule>()
 
     companion object {
-        val ACCESS_TOKEN = "access_token"
+        val SESSION_COOKIE = "session_cookie"
     }
 
     protected fun setActionBar(title: String, showBackArrow: Boolean) {
@@ -37,9 +37,5 @@ open class BaseActivity : AppCompatActivity() {
                 }
                 .create()
                 .show()
-    }
-
-    fun setAccessToken(accessToken: String?) {
-        sharedPrefs(this).edit().putString(ACCESS_TOKEN, accessToken).apply()
     }
 }

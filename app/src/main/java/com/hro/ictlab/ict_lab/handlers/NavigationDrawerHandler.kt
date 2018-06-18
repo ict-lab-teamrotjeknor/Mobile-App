@@ -4,6 +4,7 @@ import android.content.Intent
 import android.view.MenuItem
 import com.hro.ictlab.ict_lab.R.id.*
 import com.hro.ictlab.ict_lab.base.BaseActivity
+import com.hro.ictlab.ict_lab.koin.sharedPrefs
 import com.hro.ictlab.ict_lab.login_and_register.WelcomeActivity
 import com.hro.ictlab.ict_lab.remote_control.RemoteControlActivity
 import com.hro.ictlab.ict_lab.report_problem.ReportProblemActivity
@@ -15,7 +16,7 @@ class NavigationDrawerHandler {
 
         when (item.itemId) {
             nav_menu_logout -> {
-                activity.setAccessToken(null)
+                sharedPrefs(activity).edit().putString(BaseActivity.SESSION_COOKIE, "").apply()
                 activity.startActivity(Intent(activity, WelcomeActivity::class.java))
             }
             nav_menu_remote_control -> activity.startActivity(Intent(activity, RemoteControlActivity::class.java))
