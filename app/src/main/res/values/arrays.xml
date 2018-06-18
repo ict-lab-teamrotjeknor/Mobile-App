@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="classrooms">
+        <item>H.1.112</item>
+        <item>H.1.113</item>
+        <item>H.1.114</item>
+        <item>H.1.115</item>
+        <item>H.1.116</item>
+        <item>H.1.117</item>
+        <item>H.1.118</item>
+        <item>H.1.119</item>
+    </string-array>
+</resources>

@@ -2,21 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.hro.ictlab.ict_lab">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".base.BaseAppilcation"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".base.BaseAppilcation"
         android:theme="@style/AppTheme">
         <activity
             android:name=".login_and_register.LoginActivity"
@@ -38,12 +36,18 @@
             android:name=".login_and_register.RegisterActivity"
             android:parentActivityName=".login_and_register.WelcomeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".remote_control.RemoteControlActivity"
-            android:screenOrientation="portrait"
+        <activity
+            android:name=".remote_control.RemoteControlActivity"
+            android:parentActivityName=".home.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".report_problem.ReportProblemActivity"
+            android:parentActivityName=".home.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".events.EventsActivity"
             android:parentActivityName=".home.HomeActivity"/>
-        <activity android:name=".report_problem.ReportProblemActivity"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".home.HomeActivity"/>
+        <activity android:name=".events.ReserveActivity"
+            android:parentActivityName=".events.EventsActivity"/>
     </application>
 
 </manifest>

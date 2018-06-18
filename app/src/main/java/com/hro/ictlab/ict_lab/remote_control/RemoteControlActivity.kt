@@ -68,7 +68,6 @@ class RemoteControlActivity : PermisoActivity(), BarcodeCaptureView.OnResultHand
                 if(granted) {
                     scanner_explanation_layout.visibility = View.GONE
                     scanner_view.start()
-                    onCodeScanned("Nice")
                 }
             })
         }
@@ -76,7 +75,6 @@ class RemoteControlActivity : PermisoActivity(), BarcodeCaptureView.OnResultHand
         connect_again_button.setOnClickListener {
             remote_control_view.visibility = View.GONE
             scanner_view.start()
-            onCodeScanned("Nice")
         }
 
         control_left.setOnClickListener { sendRemoteAction() }

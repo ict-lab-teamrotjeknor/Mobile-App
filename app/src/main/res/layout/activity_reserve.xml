@@ -19,15 +19,14 @@
             android:padding="16dp">
 
             <RelativeLayout
-                android:id="@+id/subject_spinner_container"
+                android:id="@+id/classroom_spinner_container"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/edittext_height"
                 android:layout_marginBottom="16dp"
-                android:visibility="gone"
                 android:background="@drawable/boxed_background">
 
                 <Spinner
-                    android:id="@+id/subjectSpinner"
+                    android:id="@+id/classroom_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginRight="16dp"
@@ -36,40 +35,27 @@
             </RelativeLayout>
 
             <EditText
-                android:id="@+id/problem_subject"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/edittext_height"
-                android:layout_marginBottom="16dp"
-                android:hint="@string/report_problem_subject_hint"
-                android:background="@drawable/boxed_background"
-                android:inputType="textEmailSubject|textCapSentences"
-                android:padding="16dp"
-                android:textSize="14dp"/>
-
-            <EditText
-                android:id="@+id/problem_message"
+                android:id="@+id/Omschrijving"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
-                android:hint="@string/report_problem_message_hint"
+                android:hint="@string/reservation_reason_hint"
                 android:background="@drawable/boxed_background"
                 android:gravity="top"
                 android:maxLines="20"
                 android:padding="16dp"
                 android:inputType="textCapSentences"
-
                 android:textSize="14dp"/>
 
             <Button
-                android:id="@+id/send_problem_button"
+                android:id="@+id/reserve_button"
                 style="?android:attr/borderlessButtonStyle"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height"
                 android:layout_gravity="center"
                 android:text="@string/report_problem_submit_button"
                 android:background="@drawable/boxed_button_selector"
-                android:enabled="false"
                 android:textColor="@drawable/button_text_selector"
                 android:textSize="14sp" />
         </LinearLayout>

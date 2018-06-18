@@ -14,17 +14,29 @@
     <string name="connect_again_button">Nieuwe verbinding maken</string>\
     <string name="scan_qr_code_button">Start de scanner</string>
     <string name="report_problem_submit_button">Verstuur</string>
+    <string name="make_reservation">Naar reserveringen</string>
+    <string name="cancel">Annuleren</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nee</string>
+    <string name="reserve_button">Reserveer</string>
 
     <string name="username_hint">xxxxxxx@hr.nl</string>
     <string name="password_hint">Wachtwoord</string>
     <string name="confirm_password_hint">Wachtwoord bevestigen</string>
     <string name="report_problem_subject_hint">Onderwerp</string>
     <string name="report_problem_message_hint">Melding</string>
+    <string name="reservation_reason_hint">Reden van reservering</string>
 
     <string name="login_title">Inloggen</string>
     <string name="register_title">Registreer</string>
     <string name="remote_control_title">Afstandsbediening</string>
     <string name="report_problem_title">Melding maken</string>
+    <string name="reservations_title">Reserveringen</string>
+    <string name="reserve_title">Reserveren</string>
+
+    <string name="reservation_popup_explaination">Klik op "Naar reserveringen" om reserveringen op deze dag te bekijken of aan te maken.</string>
+    <string name="reserve_popup_explaination">Wil je een reservering maken voor dit lesuur?</string>
+    <string name="confirm_reservation_explanaition">Weet je zeker dat je deze reservering wilt indienen?</string>
 
     <string name="welcome_text">Welkom in de Booking App van de Hogeschool Rotterdam. Je kunt er voor kiezen om te registreren met je school e-mail of om als gast verder te gaan.</string>
 
