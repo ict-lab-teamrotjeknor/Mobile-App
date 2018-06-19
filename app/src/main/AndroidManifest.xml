@@ -44,10 +44,17 @@
             android:name=".report_problem.ReportProblemActivity"
             android:parentActivityName=".home.HomeActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".events.EventsActivity"
-            android:parentActivityName=".home.HomeActivity"/>
-        <activity android:name=".events.ReserveActivity"
-            android:parentActivityName=".events.EventsActivity"/>
+        <activity
+            android:name=".events.EventsActivity"
+            android:parentActivityName=".home.HomeActivity" />
+        <activity
+            android:name=".events.ReserveActivity"
+            android:parentActivityName=".events.EventsActivity" />
+
+        <service
+            android:name=".services.NotificationService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

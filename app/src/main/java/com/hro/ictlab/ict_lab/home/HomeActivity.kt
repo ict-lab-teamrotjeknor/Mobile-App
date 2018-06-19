@@ -15,6 +15,8 @@ import com.hro.ictlab.ict_lab.base.BaseActivity
 import com.hro.ictlab.ict_lab.events.EventsActivity
 import com.hro.ictlab.ict_lab.events.EventsActivity.Companion.SELECTED_DATE
 import com.hro.ictlab.ict_lab.handlers.NavigationDrawerHandler
+import com.hro.ictlab.ict_lab.services.NotificationService
+import com.hro.ictlab.ict_lab.services.NotificationService.Companion.ALERT
 import kotlinx.android.synthetic.main.activity_home.*
 import rx.android.schedulers.AndroidSchedulers
 import rx.schedulers.Schedulers
@@ -24,18 +26,25 @@ import java.util.*
 
 class HomeActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+
     private var navigationDrawerHandler = NavigationDrawerHandler()
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     private val dateFormat = SimpleDateFormat("MMMM yyyy", Locale.getDefault())
     private val eventFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
     private val dummyEventList : MutableList<Date> = mutableListOf(eventFormat.parse("2018-06-24"), eventFormat.parse("2018-06-21"), eventFormat.parse("2018-06-29"), eventFormat.parse("2018-07-05"))
 
+    companion object {
+        lateinit var notificationIntent: Intent
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
         setActionBar(dateFormat.format(Date()), true)
+
+        notificationIntent = Intent(this, NotificationService::class.java)
+        startService(notificationIntent)
 
         getUserReservations()
 
